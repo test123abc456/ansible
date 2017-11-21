@@ -5,7 +5,7 @@
   pre_tasks:
   - name: create docroot
     file:
-      path: "{{ apache_vhosts.documentroot }}"
+      path: /var/www/vhosts
       state: directory
       mode: 0755
       owner: www-data
