@@ -2,5 +2,14 @@
 - hosts: all
   vars_files:
     - vars/main.yaml
+  pre_tasks:
+  - name: create docroot
+    file:
+      path: {{ documentroot }}
+      state: directory
+      mode: 0755
+      owner: www-data
+      group: www-data
   roles:
   - { role: ansible-role-apache }
+ 
