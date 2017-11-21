@@ -5,7 +5,7 @@
   pre_tasks:
   - name: create docroot
     file:
-      path: {{ documentroot }}
+      path: "{{ documentroot }}"
       state: directory
       mode: 0755
       owner: www-data
