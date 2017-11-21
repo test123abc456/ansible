@@ -5,9 +5,18 @@
   pre_tasks:
   - name: create docroot
     file:
-      path: /var/www/vhosts
+      path: /var/www/vhosts/example_com
+      recurse: yes
       state: directory
       mode: 0755
+      owner: www-data
+      group: www-data
+  - name: deploy html file
+    file:
+      src: files/index.html
+      dest: /var/www/vhosts/example_com/index.html
+      state: present
+      mode: 0644
       owner: www-data
       group: www-data
   roles:
