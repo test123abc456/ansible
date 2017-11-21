@@ -12,10 +12,9 @@
       owner: www-data
       group: www-data
   - name: deploy html file
-    file:
+    copy:
       src: files/index.html
       dest: /var/www/vhosts/example_com/index.html
-      state: file
       mode: 0644
       owner: www-data
       group: www-data
